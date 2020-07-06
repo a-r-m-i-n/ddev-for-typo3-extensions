@@ -1,7 +1,7 @@
 # DDEV for TYPO3 extensions
 
 This is an example configuration for DDEV to provide a development environment
-for a single TYPO3 CMS extension.
+for a asingle TYPO3 CMS extension.
 
 It also provides a very basic skeleton of a TYPO3 extension, which automatically get 
 installed in all TYPO3 versions, installed.
@@ -87,6 +87,16 @@ The TYPO3 installations are available here:
 - https://v10.my-ext.ddev.site/typo3/
 
 *Note: Replace ``my-ext`` with your DDEV sitename*
+
+#### Known problems
+
+When you get the following error
+
+> bash: ./install-v10: /bin/bash^M: bad interpreter: No such file or directory
+
+your host system is probably Windows based. This issue occures, when the shell
+scripts got wrong line endings (wrong: CRLF, correct: LF). On Windows, Git changes
+the line-endings by default, if `git config core.autocrlf` is not set to ``false``.
 
 
 #### Credentials
