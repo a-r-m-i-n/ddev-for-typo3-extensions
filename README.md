@@ -1,9 +1,9 @@
 # DDEV for TYPO3 extensions
 
 This is an example configuration for DDEV to provide a development environment
-for a asingle TYPO3 CMS extension.
+for a single TYPO3 CMS extension.
 
-It also provides a very basic skeleton of a TYPO3 extension, which automatically get 
+It also provides a very basic skeleton of a TYPO3 extension, which automatically gets 
 installed in all TYPO3 versions, installed.
 
 Currently, the following versions are supported:
@@ -44,7 +44,7 @@ The following software is required to be installed on the host machine:
 - Docker Compose
 - DDEV
 
-Also an internet connection is required, to fetch containers and packages. 
+Also, an internet connection is required, to fetch containers and packages. 
 Once the environment is installed, no internet connection is required anymore. 
 
 
@@ -76,7 +76,7 @@ To install all at once, you can also use
 $ ddev install-all
 ```
 
-When installation is done, you can access an overview here:
+When the installation is done, you can access an overview here:
 
 - https://my-ext.ddev.site/
 
@@ -97,7 +97,7 @@ When you get the following error
 
 > bash: ./install-v10: /bin/bash^M: bad interpreter: No such file or directory
 
-your host system is probably Windows based. This issue occures, when the shell
+your host system is probably Windows based. This issue occurs, when the shell
 scripts got wrong line endings (wrong: CRLF, correct: LF). On Windows, Git changes
 the line-endings by default, if `git config core.autocrlf` is not set to ``false``.
 
@@ -134,7 +134,7 @@ $ ddev exec v10/vendor/bin/typo3cms
 
 ### Render and view documentation
 
-Every extension should have a proper documentation, which can get hosted on
+Every extension should have proper documentation, which can get hosted on
 https://docs.typo3.org. To render and view the documentation locally, you can use: 
 
 ```
@@ -170,6 +170,6 @@ some funds to support further development.
 ### Contribute
 
 If you are a developer and you want to submit improvements as code, you can fork this repo
-and make a pull request to master branch.
+and make a pull request to the master branch.
 
 Thanks!
