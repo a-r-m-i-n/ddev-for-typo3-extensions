@@ -88,7 +88,10 @@ The TYPO3 installations are available here:
 
 *Note: Replace ``my-ext`` with your DDEV sitename*
 
-#### Known problems
+### Known problems
+
+
+#### Wrong line endings
 
 When you get the following error
 
@@ -97,6 +100,16 @@ When you get the following error
 your host system is probably Windows based. This issue occures, when the shell
 scripts got wrong line endings (wrong: CRLF, correct: LF). On Windows, Git changes
 the line-endings by default, if `git config core.autocrlf` is not set to ``false``.
+
+
+#### Forbidden 403 after upgrading to DDEV 1.15
+
+In this case, check the file ``.ddev/apache/apache-site.conf`` and replace
+``$WEBSERVER_DOCROOT`` with ``/var/www/html``. 
+
+Then, perform ``ddev restart`` and it should work again. 
+
+When you check out this project now, the adjustment has been already applied. 
 
 
 #### Credentials
