@@ -112,7 +112,7 @@ Then, perform ``ddev restart`` and it should work again.
 When you check out this project now, the adjustment has been already applied. 
 
 
-#### Credentials
+### Credentials
 
 All versions got the same credentials set:
 
@@ -120,7 +120,7 @@ All versions got the same credentials set:
 - Password: ``password`` (also in install tool)
 
 
-#### TYPO3 CLI / typo3_console
+### TYPO3 CLI / typo3_console
 
 To access TYPO3's CLI tools you can utilize ``ddev exec`` like that:
 
