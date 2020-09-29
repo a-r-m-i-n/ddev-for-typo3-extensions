@@ -1,0 +1,7 @@
+#!/bin/bash
+
+## Description: Use v9 typo3 CLI
+## Usage: v9-typo3
+## Example: "ddev v9-typo3 --version"
+
+v9/vendor/bin/typo3 $@

@@ -131,6 +131,20 @@ $ ddev exec v10/vendor/bin/typo3cms
 
 *Note: Replace ``v10`` with the version you want to address*
 
+In addition to the full path you can use a ddev command like that:
+
+```
+# v8
+$ ddev v8-typo3cms
+
+# v9
+$ ddev v9-typo3
+$ ddev v9-typo3cms
+
+# v10
+$ ddev v10-typo3
+$ ddev v10-typo3cms
+```
 
 ### Render and view documentation
 

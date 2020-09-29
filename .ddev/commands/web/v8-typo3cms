@@ -1,0 +1,7 @@
+#!/bin/bash
+
+## Description: Use v8 typo3cms CLI
+## Usage: v8-typo3cms
+## Example: "ddev v8-typo3cms --version"
+
+v8/vendor/bin/typo3cms $@

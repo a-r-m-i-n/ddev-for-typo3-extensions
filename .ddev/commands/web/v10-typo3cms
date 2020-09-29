@@ -1,0 +1,7 @@
+#!/bin/bash
+
+## Description: Use v10 typo3cms CLI
+## Usage: v10-typo3cms
+## Example: "ddev v10-typo3cms --version"
+
+v10/vendor/bin/typo3cms $@
