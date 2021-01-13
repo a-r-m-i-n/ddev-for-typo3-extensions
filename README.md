@@ -151,6 +151,14 @@ $ docker volume rm my-ext-v8-data my-ext-v9-data my-ext-v10-data
 ```
 *Note: Replace ``my-ext`` with your DDEV sitename*
 
+or perform this command:
+
+```
+$ ddev reset
+```
+
+and confirm with ``y``.
+
 
 ## Support
 
