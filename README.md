@@ -8,10 +8,10 @@ installed in all TYPO3 versions, installed.
 
 Currently, the following versions are supported:
 
-- TYPO3 8.7 LTS
 - TYPO3 9.5 LTS
 - TYPO3 10.4 LTS
 
+*If you are looking for TYPO3 8, you can check out [this old version](https://github.com/a-r-m-i-n/ddev-for-typo3-extensions/tree/v8-support).*
 
 ## Setup
 
@@ -65,7 +65,6 @@ This environment offers four scripts, to provision the web container, supporting
 the following TYPO3 versions:
 
 ```
-$ ddev install-v8
 $ ddev install-v9
 $ ddev install-v10
 ```
@@ -82,7 +81,6 @@ When the installation is done, you can access an overview here:
 
 The TYPO3 installations are available here:
 
-- https://v8.my-ext.ddev.site/typo3/
 - https://v9.my-ext.ddev.site/typo3/
 - https://v10.my-ext.ddev.site/typo3/
 
@@ -147,7 +145,7 @@ $ ddev launch-docs
 When you want to reset a project, don't forget to remove the volumes, after removing the containers:
 ```
 $ ddev rm -O -R
-$ docker volume rm my-ext-v8-data my-ext-v9-data my-ext-v10-data
+$ docker volume rm my-ext-v9-data my-ext-v10-data
 ```
 *Note: Replace ``my-ext`` with your DDEV sitename*
 

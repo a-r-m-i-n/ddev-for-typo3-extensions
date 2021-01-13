@@ -10,8 +10,8 @@ $EM_CONF[$_EXTKEY] = [
     'author_company' => 'v.ieweg Webentwicklung',
     'constraints' => [
         'depends' => [
-            'php' => '7.2.0-7.4.99',
-            'typo3' => '8.7.0-10.99.99',
+            'php' => '7.4.0-7.4.99',
+            'typo3' => '9.5.0-10.99.99',
         ],
     ],
     'autoload' => [
