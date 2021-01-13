@@ -11,6 +11,7 @@ xdebug_enabled: false
 additional_hostnames:
     - v9.my-ext
     - v10.my-ext
+    - v11.my-ext
 additional_fqdns: []
 provider: default
 use_dns_when_possible: true
@@ -19,3 +20,4 @@ omit_containers:
 extra_services:
     - v9-data
     - v10-data
+    - v11-data

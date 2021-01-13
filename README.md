@@ -10,6 +10,7 @@ Currently, the following versions are supported:
 
 - TYPO3 9.5 LTS
 - TYPO3 10.4 LTS
+- TYPO3 11.x
 
 *If you are looking for TYPO3 8, you can check out [this old version](https://github.com/a-r-m-i-n/ddev-for-typo3-extensions/tree/v8-support).*
 
@@ -67,6 +68,7 @@ the following TYPO3 versions:
 ```
 $ ddev install-v9
 $ ddev install-v10
+$ ddev install-v11
 ```
 
 To install all at once, you can also use
@@ -83,6 +85,7 @@ The TYPO3 installations are available here:
 
 - https://v9.my-ext.ddev.site/typo3/
 - https://v10.my-ext.ddev.site/typo3/
+- https://v11.my-ext.ddev.site/typo3/
 
 *Note: Replace ``my-ext`` with your DDEV sitename*
 
@@ -145,7 +148,7 @@ $ ddev launch-docs
 When you want to reset a project, don't forget to remove the volumes, after removing the containers:
 ```
 $ ddev rm -O -R
-$ docker volume rm my-ext-v9-data my-ext-v10-data
+$ docker volume rm my-ext-v9-data my-ext-v10-data my-ext-v11-data
 ```
 *Note: Replace ``my-ext`` with your DDEV sitename*
 
