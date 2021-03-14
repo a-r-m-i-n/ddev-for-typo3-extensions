@@ -22,6 +22,7 @@ Currently, the following versions are supported:
     - search for ``my-ext`` and replace with your **DDEV sitename** (used in URL)
 3. Change the package name ``vendor/my-ext`` in root ``composer.json`` as well as 
    in environment section in ``.ddev/docker-compose.web.yaml`` file (variable ``PACKAGE_NAME``).
+4. Also adjust the autoload section in root ``composer.json``.
 
 When done with renaming, the following files have been touched:
 
@@ -29,7 +30,7 @@ When done with renaming, the following files have been touched:
 - ``.ddev/web-build/Dockerfile`` creates initial index.html files
 - ``.ddev/docker-compose.web.yaml`` to define environment variables and Docker volumes 
 - ``.ddev/config.yaml`` to set DDEV sitename and additional hostnames
-- ``composer.json`` the package name of your extension
+- ``composer.json`` the package name of your extension, the autoload and extra section
 
 You can check the final result in your version control system and share it with your
 collaborators, which can use it instantly.

@@ -14,7 +14,8 @@
         {
             "name": "Armin Vieweg",
             "role": "Developer",
-            "email": "armin@v.ieweg.de"
+            "email": "info@v.ieweg.de",
+            "homepage": "https://v.ieweg.de"
         }
     ],
     "require": {
@@ -28,5 +29,10 @@
     },
     "replace": {
         "typo3-ter/my_ext": "*"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "my_ext"
+        }
     }
 }
