@@ -23,7 +23,6 @@ vendor/bin/typo3cms configuration:set 'MAIL/transport_smtp_server' 'localhost:10
 vendor/bin/typo3cms configuration:set 'GFX/processor' 'ImageMagick'
 vendor/bin/typo3cms configuration:set 'GFX/processor_path' '/usr/bin/'
 vendor/bin/typo3cms configuration:set 'GFX/processor_path_lzw' '/usr/bin/'
-vendor/bin/typo3cms install:generatepackagestates
 
 sed -i -e "s/base: ht\//base: \//g" /var/www/html/$VERSION/config/sites/main/config.yaml
 sed -i -e 's/base: \/en\//base: \//g' /var/www/html/$VERSION/config/sites/main/config.yaml
