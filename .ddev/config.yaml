@@ -9,6 +9,7 @@ router_http_port: "80"
 router_https_port: "443"
 xdebug_enabled: false
 additional_hostnames:
+    - docs.my-ext
     - v9.my-ext
     - v10.my-ext
     - v11.my-ext

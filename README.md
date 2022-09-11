@@ -88,6 +88,10 @@ The TYPO3 installations are available here:
 - https://v10.my-ext.ddev.site/typo3/
 - https://v11.my-ext.ddev.site/typo3/
 
+As well as an entry-point to the rendered HTML documentation:
+
+- https://docs.my-ext.ddev.site/ (you need to perform ``ddev docs`` first)
+
 *Note: Replace ``my-ext`` with your DDEV sitename*
 
 ### Known problems
@@ -179,7 +183,7 @@ some funds to support further development.
 
 ### Contribute
 
-If you are a developer and you want to submit improvements as code, you can fork this repo
+If you are a developer, and you want to submit improvements as code, you can fork this repo
 and make a pull request to the master branch.
 
 Thanks!
