@@ -4,7 +4,7 @@ This is an example configuration for DDEV to provide a development environment
 for a single TYPO3 CMS extension.
 
 It also provides a very basic skeleton of a TYPO3 extension, which automatically gets 
-installed in all TYPO3 versions, installed.
+installed in all TYPO3 versions.
 
 Currently, the following versions are supported:
 

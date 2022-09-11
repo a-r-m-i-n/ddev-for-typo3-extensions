@@ -8,6 +8,7 @@ composer config extra.typo3/cms.web-dir public -d /var/www/html/$VERSION
 composer config repositories.$EXTENSION_KEY path ../../$EXTENSION_KEY -d /var/www/html/$VERSION
 composer config --no-plugins allow-plugins.typo3/cms-composer-installers true -d /var/www/html/$VERSION
 composer config --no-plugins allow-plugins.typo3/class-alias-loader true -d /var/www/html/$VERSION
+composer config --no-plugins allow-plugins.helhum/typo3-console-plugin true -d /var/www/html/$VERSION
 composer req t3/cms:'^9.5' mehrwert/phpmyadmin:'^5.6' $PACKAGE_NAME:'*@dev' --no-progress -n -d /var/www/html/$VERSION
 
 
