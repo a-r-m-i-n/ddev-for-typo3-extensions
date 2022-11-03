@@ -1,0 +1,18 @@
+#!/bin/bash
+
+VERSION=v12
+
+rm -rf /var/www/html/$VERSION/*
+echo "{}" > /var/www/html/$VERSION/composer.json
+composer config extra.typo3/cms.web-dir public -d /var/www/html/$VERSION
+composer config repositories.$EXTENSION_KEY path ../../$EXTENSION_KEY -d /var/www/html/$VERSION
+composer config --no-plugins allow-plugins.typo3/cms-composer-installers true -d /var/www/html/$VERSION
+composer config --no-plugins allow-plugins.typo3/class-alias-loader true -d /var/www/html/$VERSION
+composer req typo3/minimal:'^12' typo3/cms-belog:'^12' typo3/cms-beuser:'^12' typo3/cms-cli:'^3' \
+             typo3/cms-fluid-styled-content:'^12' typo3/cms-info:'^12' typo3/cms-lowlevel:'^12' \
+             typo3/cms-rte-ckeditor:'^12' typo3/cms-setup:'^12' typo3/cms-tstemplate:'^12' \
+             $PACKAGE_NAME:'*@dev' --no-progress -n -d /var/www/html/$VERSION
+
+mkdir -p /var/www/html/$VERSION/config/system
+cp /var/www/$EXTENSION_KEY/.ddev/web-build/v12/additional.php /var/www/html/$VERSION/config/system/additional.php
+touch /var/www/html/$VERSION/public/FIRST_INSTALL

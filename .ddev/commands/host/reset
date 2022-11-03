@@ -1,9 +1,0 @@
-#!/bin/bash
-
-read -p "Remove this project entirely? (incl. volumes) (y/n)? " CONT
-if [ "$CONT" = "y" ]; then
-  ddev delete -Oy
-  docker volume rm my-ext-v9-data my-ext-v10-data my-ext-v11-data
-else
-  echo "Canceled.";
-fi

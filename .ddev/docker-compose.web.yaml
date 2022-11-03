@@ -22,13 +22,10 @@ services:
               source: ../
               target: /var/www/my_ext
               consistency: cached
-            - v9-data:/var/www/html/v9
-            - v10-data:/var/www/html/v10
             - v11-data:/var/www/html/v11
+            - v12-data:/var/www/html/v12
 volumes:
-    v9-data:
-        name: "${DDEV_SITENAME}-v9-data"
-    v10-data:
-        name: "${DDEV_SITENAME}-v10-data"
     v11-data:
         name: "${DDEV_SITENAME}-v11-data"
+    v12-data:
+        name: "${DDEV_SITENAME}-v12-data"

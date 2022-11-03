@@ -25,7 +25,7 @@ Example Extension (for DDEV for TYPO3 extensions)
 		TYPO3 CMS, extension, example, ddev
 
 	:Copyright:
-		2020
+		2020-2022
 
 	:Author:
 		Armin Vieweg

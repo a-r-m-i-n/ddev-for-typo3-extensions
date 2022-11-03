@@ -8,11 +8,13 @@ installed in all TYPO3 versions.
 
 Currently, the following versions are supported:
 
-- TYPO3 9.5 LTS
-- TYPO3 10.4 LTS
-- TYPO3 11.x
+- TYPO3 11.5 LTS
+- TYPO3 12.x
 
-*If you are looking for TYPO3 8, you can check out [this old version](https://github.com/a-r-m-i-n/ddev-for-typo3-extensions/tree/v8-support).*
+If you are looking for older TYPO3 CMS versions, you can checkout and use those tags:
+
+- [TYPO3 CMS 9.5 & 10.4 LTS](https://github.com/a-r-m-i-n/ddev-for-typo3-extensions/tree/v9-support)
+- [TYPO3 CMS 8.7 LTS](https://github.com/a-r-m-i-n/ddev-for-typo3-extensions/tree/v8-support)
 
 ## Setup
 
@@ -67,9 +69,8 @@ This environment offers four scripts, to provision the web container, supporting
 the following TYPO3 versions:
 
 ```
-$ ddev install-v9
-$ ddev install-v10
 $ ddev install-v11
+$ ddev install-v12
 ```
 
 To install all at once, you can also use
@@ -84,15 +85,26 @@ When the installation is done, you can access an overview here:
 
 The TYPO3 installations are available here:
 
-- https://v9.my-ext.ddev.site/typo3/
-- https://v10.my-ext.ddev.site/typo3/
 - https://v11.my-ext.ddev.site/typo3/
+- https://v12.my-ext.ddev.site/typo3/
 
 As well as an entry-point to the rendered HTML documentation:
 
 - https://docs.my-ext.ddev.site/ (you need to perform ``ddev docs`` first)
 
 *Note: Replace ``my-ext`` with your DDEV sitename*
+
+
+### TYPO3 v12 notice
+
+Unfortunately it is not possible to run the TYPO3 installation process by
+CLI anymore. After you have performed the ``ddev install-v12`` command, you
+need to open the frontend/backend of TYPO3 and walk through the installation
+processes.
+
+The only information you must supply, is the admin username and password,
+all other settings are provided by the [``additional.php``](.ddev/web-build/v12/additional.php) file.
+
 
 ### Known problems
 
@@ -101,7 +113,7 @@ As well as an entry-point to the rendered HTML documentation:
 
 When you get the following error
 
-> bash: ./install-v10: /bin/bash^M: bad interpreter: No such file or directory
+> bash: ./install-v12: /bin/bash^M: bad interpreter: No such file or directory
 
 your host system is probably Windows based. This issue occurs, when the shell
 scripts got wrong line endings (wrong: CRLF, correct: LF). On Windows, Git changes
@@ -131,11 +143,11 @@ All versions got the same credentials set:
 To access TYPO3's CLI tools you can utilize ``ddev exec`` like that:
 
 ```
-$ ddev exec v10/vendor/bin/typo3
-$ ddev exec v10/vendor/bin/typo3cms
+$ ddev exec v12/vendor/bin/typo3
+$ ddev exec v12/vendor/bin/typo3cms
 ```
 
-*Note: Replace ``v10`` with the version you want to address*
+*Note: Replace ``v12`` with the version you want to address*
 
 
 ### Render and view documentation
@@ -150,20 +162,10 @@ $ ddev launch-docs
 
 ### Remove DDEV project
 
-When you want to reset a project, don't forget to remove the volumes, after removing the containers:
+To remove a DDEV project you can use the following command on CLI
 ```
-$ ddev rm -O -R
-$ docker volume rm my-ext-v9-data my-ext-v10-data my-ext-v11-data
+$ ddev delete -Oy
 ```
-*Note: Replace ``my-ext`` with your DDEV sitename*
-
-or perform this command:
-
-```
-$ ddev reset
-```
-
-and confirm with ``y``.
 
 
 ## Support
