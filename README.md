@@ -95,44 +95,20 @@ As well as an entry-point to the rendered HTML documentation:
 *Note: Replace ``my-ext`` with your DDEV sitename*
 
 
-### TYPO3 v12 notice
+#### TYPO3 v12 notice
 
 Unfortunately it is not possible to run the TYPO3 installation process by
 CLI anymore. After you have performed the ``ddev install-v12`` command, you
-need to open the frontend/backend of TYPO3 and walk through the installation
-processes.
+need to open the frontend/backend of TYPO3 and walk through the 
+initial installation process.
 
-The only information you must supply, is the admin username and password,
-all other settings are provided by the [``additional.php``](.ddev/web-build/v12/additional.php) file.
-
-
-### Known problems
-
-
-#### Wrong line endings
-
-When you get the following error
-
-> bash: ./install-v12: /bin/bash^M: bad interpreter: No such file or directory
-
-your host system is probably Windows based. This issue occurs, when the shell
-scripts got wrong line endings (wrong: CRLF, correct: LF). On Windows, Git changes
-the line-endings by default, if `git config core.autocrlf` is not set to ``false``.
-
-
-#### Forbidden 403 after upgrading to DDEV 1.15
-
-In this case, check the file ``.ddev/apache/apache-site.conf`` and replace
-``$WEBSERVER_DOCROOT`` with ``/var/www/html``. 
-
-Then, perform ``ddev restart`` and it should work again. 
-
-When you check out this project now, the adjustment has been already applied. 
+The only information you need to supply, is the admin username and password.
+All other settings are provided by the [``additional.php``](.ddev/web-build/v12/additional.php) file.
 
 
 ### Credentials
 
-All versions got the same credentials set:
+All versions got the same credentials set (in v12 you set these information by yourself):
 
 - Username: ``admin``
 - Password: ``password`` (also in install tool)
@@ -141,13 +117,14 @@ All versions got the same credentials set:
 ### TYPO3 CLI / typo3_console
 
 To access TYPO3's CLI tools you can utilize ``ddev exec`` like that:
-
 ```
 $ ddev exec v12/vendor/bin/typo3
-$ ddev exec v12/vendor/bin/typo3cms
 ```
 
-*Note: Replace ``v12`` with the version you want to address*
+In TYPO3 v11 you can still use the binary of typo3_console:
+```
+$ ddev exec v11/vendor/bin/typo3cms
+```
 
 
 ### Render and view documentation
@@ -181,6 +158,28 @@ https://github.com/a-r-m-i-n/ddev-for-typo3-extensions/issues
 
 If you like this project, feel free to [donate](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2DCCULSKFRZFU) 
 some funds to support further development.
+
+
+### Known problems
+
+#### Wrong line endings
+
+When you get the following error
+
+> bash: ./install-v12: /bin/bash^M: bad interpreter: No such file or directory
+
+your host system is probably Windows based. This issue occurs, when the shell
+scripts got wrong line endings (wrong: CRLF, correct: LF). On Windows, Git changes
+the line-endings by default, if `git config core.autocrlf` is not set to ``false``.
+
+#### Forbidden 403 after upgrading to DDEV 1.15
+
+In this case, check the file ``.ddev/apache/apache-site.conf`` and replace
+``$WEBSERVER_DOCROOT`` with ``/var/www/html``.
+
+Then, perform ``ddev restart`` and it should work again.
+
+When you check out this project now, the adjustment has been already applied.
 
 
 ### Contribute
