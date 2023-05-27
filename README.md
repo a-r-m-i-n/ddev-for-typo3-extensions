@@ -9,9 +9,9 @@ installed in all TYPO3 versions.
 Currently, the following versions are supported:
 
 - TYPO3 11.5 LTS
-- TYPO3 12.x
+- TYPO3 12.4 LTS
 
-If you are looking for older TYPO3 CMS versions, you can checkout and use those tags:
+If you are looking for older TYPO3 CMS versions, you can check out and use those tags:
 
 - [TYPO3 CMS 9.5 & 10.4 LTS](https://github.com/a-r-m-i-n/ddev-for-typo3-extensions/tree/v9-support)
 - [TYPO3 CMS 8.7 LTS](https://github.com/a-r-m-i-n/ddev-for-typo3-extensions/tree/v8-support)
@@ -95,23 +95,12 @@ As well as an entry-point to the rendered HTML documentation:
 *Note: Replace ``my-ext`` with your DDEV sitename*
 
 
-#### TYPO3 v12 notice
-
-Unfortunately it is not possible to run the TYPO3 installation process by
-CLI anymore. After you have performed the ``ddev install-v12`` command, you
-need to open the frontend/backend of TYPO3 and walk through the 
-initial installation process.
-
-The only information you need to supply, is the admin username and password.
-All other settings are provided by the [``additional.php``](.ddev/web-build/v12/additional.php) file.
-
-
 ### Credentials
 
-All versions got the same credentials set (in v12 you set these information by yourself):
+All versions got the same credentials set:
 
 - Username: ``admin``
-- Password: ``password`` (also in install tool)
+- Password: ``Password:joh316`` (also in install tool)
 
 
 ### TYPO3 CLI / typo3_console

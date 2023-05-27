@@ -3,16 +3,30 @@
 VERSION=v12
 
 rm -rf /var/www/html/$VERSION/*
+mkdir -p /var/www/html/$VERSION/
 echo "{}" > /var/www/html/$VERSION/composer.json
 composer config extra.typo3/cms.web-dir public -d /var/www/html/$VERSION
 composer config repositories.$EXTENSION_KEY path ../../$EXTENSION_KEY -d /var/www/html/$VERSION
 composer config --no-plugins allow-plugins.typo3/cms-composer-installers true -d /var/www/html/$VERSION
 composer config --no-plugins allow-plugins.typo3/class-alias-loader true -d /var/www/html/$VERSION
-composer req typo3/minimal:'^12' typo3/cms-belog:'^12' typo3/cms-beuser:'^12' typo3/cms-cli:'^3' \
-             typo3/cms-fluid-styled-content:'^12' typo3/cms-info:'^12' typo3/cms-lowlevel:'^12' \
-             typo3/cms-rte-ckeditor:'^12' typo3/cms-setup:'^12' typo3/cms-tstemplate:'^12' \
-             $PACKAGE_NAME:'*@dev' --no-progress -n -d /var/www/html/$VERSION
+composer req t3/cms:'^12' $PACKAGE_NAME:'*@dev' --no-progress -n -d /var/www/html/$VERSION
 
-mkdir -p /var/www/html/$VERSION/config/system
-cp /var/www/$EXTENSION_KEY/.ddev/web-build/v12/additional.php /var/www/html/$VERSION/config/system/additional.php
-touch /var/www/html/$VERSION/public/FIRST_INSTALL
+cd /var/www/html/$VERSION
+
+TYPO3_INSTALL_DB_DBNAME=$VERSION
+vendor/bin/typo3 install:setup -n --database-name $VERSION
+vendor/bin/typo3 configuration:set 'BE/debug' 1
+vendor/bin/typo3 configuration:set 'FE/debug' 1
+vendor/bin/typo3 configuration:set 'SYS/devIPmask' '*'
+vendor/bin/typo3 configuration:set 'SYS/displayErrors' 1
+vendor/bin/typo3 configuration:set 'SYS/trustedHostsPattern' '.*.*'
+vendor/bin/typo3 configuration:set 'MAIL/transport' 'smtp'
+vendor/bin/typo3 configuration:set 'MAIL/transport_smtp_server' 'localhost:1025'
+vendor/bin/typo3 configuration:set 'GFX/processor' 'ImageMagick'
+vendor/bin/typo3 configuration:set 'GFX/processor_path' '/usr/bin/'
+vendor/bin/typo3 configuration:set 'GFX/processor_path_lzw' '/usr/bin/'
+
+sed -i -e "s/base: ht\//base: \//g" /var/www/html/$VERSION/config/sites/main/config.yaml
+sed -i -e 's/base: \/en\//base: \//g' /var/www/html/$VERSION/config/sites/main/config.yaml
+
+vendor/bin/typo3 cache:flush

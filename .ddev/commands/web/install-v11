@@ -3,6 +3,7 @@
 VERSION=v11
 
 rm -rf /var/www/html/$VERSION/*
+mkdir -p /var/www/html/$VERSION/
 echo "{}" > /var/www/html/$VERSION/composer.json
 composer config extra.typo3/cms.web-dir public -d /var/www/html/$VERSION
 composer config repositories.$EXTENSION_KEY path ../../$EXTENSION_KEY -d /var/www/html/$VERSION

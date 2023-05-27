@@ -7,7 +7,7 @@ ENV DDEV_SITENAME "my-ext"
 RUN echo "<html><head><style>h2 {display:inline-block;margin-right:0.5em;vertical-align:middle;}</style></head>" > /var/www/html/index.html
 RUN echo "<body><h1>EXT:${EXTENSION_KEY} Dev Environments</h1><ul>" >> /var/www/html/index.html
 RUN echo "<li><h2>TYPO3 11.5 LTS</h2><a href="https://v11.${DDEV_SITENAME}.ddev.site/">Frontend</a> | <a href="https://v11.${DDEV_SITENAME}.ddev.site/typo3/">Backend</a></li>" >> /var/www/html/index.html
-RUN echo "<li><h2>TYPO3 12.x</h2><a href="https://v12.${DDEV_SITENAME}.ddev.site/">Frontend</a> | <a href="https://v12.${DDEV_SITENAME}.ddev.site/typo3/">Backend</a></li>" >> /var/www/html/index.html
+RUN echo "<li><h2>TYPO3 12.4 LTS</h2><a href="https://v12.${DDEV_SITENAME}.ddev.site/">Frontend</a> | <a href="https://v12.${DDEV_SITENAME}.ddev.site/typo3/">Backend</a></li>" >> /var/www/html/index.html
 RUN echo "</ul>" >> /var/www/html/index.html
 RUN echo "<hr>" >> /var/www/html/index.html
 RUN echo "<h3>TYPO3 Backend</h3><ul><li><b>User:</b> <code>admin</code></li><li><b>Password:</b> <code>password</code> (also Install Tool)</li></ul>" >> /var/www/html/index.html
