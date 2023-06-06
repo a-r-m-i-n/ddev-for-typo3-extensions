@@ -65,7 +65,7 @@ on CLI. This will start the containers, but will not install anything automatica
 
 ### Install TYPO3 environments
 
-This environment offers four scripts, to provision the web container, supporting
+This environment offers several DDEV commands, to provision the web container, supporting
 the following TYPO3 versions:
 
 ```
