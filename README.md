@@ -151,6 +151,11 @@ some funds to support further development.
 
 ### Known problems
 
+#### The package "__root__" depends on "t3/cms" which is not present in the system
+
+When composer gives you this issue, you need to self-update composer.
+This issue occured in Composer 2.5.6.
+
 #### Wrong line endings
 
 When you get the following error
