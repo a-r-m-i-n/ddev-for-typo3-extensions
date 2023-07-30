@@ -15,8 +15,6 @@ additional_hostnames:
 additional_fqdns: []
 provider: default
 use_dns_when_possible: true
-omit_containers:
-    - dba
 extra_services:
     - v11-data
     - v12-data
