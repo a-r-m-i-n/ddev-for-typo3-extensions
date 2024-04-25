@@ -19,8 +19,8 @@
         }
     ],
     "require": {
-        "php": ">=8.0",
-        "typo3/cms-core": "^11.5 || ^12.4"
+        "php": ">=8.2",
+        "typo3/cms-core": "^11.5 || ^12.4 || ^13"
     },
     "autoload": {
         "psr-4": {

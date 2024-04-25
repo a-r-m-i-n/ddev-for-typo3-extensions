@@ -6,10 +6,11 @@ for a single TYPO3 CMS extension.
 It also provides a very basic skeleton of a TYPO3 extension, which automatically gets 
 installed in all TYPO3 versions.
 
-Currently, the following TYPO3 CMS versions are supported (using PHP 8.1):
+Currently, the following TYPO3 CMS versions are supported (using PHP 8.2):
 
 - TYPO3 11.5 LTS
 - TYPO3 12.4 LTS
+- TYPO3 13.x
 
 If you are looking for older TYPO3 CMS versions, you can check out and use those tags:
 
@@ -71,6 +72,7 @@ the following TYPO3 versions:
 ```
 $ ddev install-v11
 $ ddev install-v12
+$ ddev install-v13
 ```
 
 To install all at once, you can also use
@@ -87,6 +89,7 @@ The TYPO3 installations are available here:
 
 - https://v11.my-ext.ddev.site/typo3/
 - https://v12.my-ext.ddev.site/typo3/
+- https://v13.my-ext.ddev.site/typo3/
 
 As well as an entry-point to the rendered HTML documentation:
 
@@ -108,6 +111,7 @@ All versions got the same credentials set:
 To access TYPO3's CLI tools you can utilize ``ddev exec`` like that:
 ```
 $ ddev exec v12/vendor/bin/typo3
+$ ddev exec v13/vendor/bin/typo3
 ```
 
 In TYPO3 v11 you can still use the binary of typo3_console:
@@ -160,20 +164,11 @@ This issue occured in Composer 2.5.6.
 
 When you get the following error
 
-> bash: ./install-v12: /bin/bash^M: bad interpreter: No such file or directory
+> bash: ./install-v13: /bin/bash^M: bad interpreter: No such file or directory
 
 your host system is probably Windows based. This issue occurs, when the shell
 scripts got wrong line endings (wrong: CRLF, correct: LF). On Windows, Git changes
 the line-endings by default, if `git config core.autocrlf` is not set to ``false``.
-
-#### Forbidden 403 after upgrading to DDEV 1.15
-
-In this case, check the file ``.ddev/apache/apache-site.conf`` and replace
-``$WEBSERVER_DOCROOT`` with ``/var/www/html``.
-
-Then, perform ``ddev restart`` and it should work again.
-
-When you check out this project now, the adjustment has been already applied.
 
 
 ### Contribute

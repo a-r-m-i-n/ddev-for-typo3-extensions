@@ -2,7 +2,7 @@ name: my-ext
 type: php
 docroot: ""
 no_project_mount: true
-php_version: "8.1"
+php_version: "8.2"
 composer_version: "2"
 webserver_type: apache-fpm
 router_http_port: "80"
@@ -12,5 +12,6 @@ additional_hostnames:
     - docs.my-ext
     - v11.my-ext
     - v12.my-ext
+    - v13.my-ext
 additional_fqdns: []
 use_dns_when_possible: true
