@@ -6,7 +6,7 @@ for a single TYPO3 CMS extension.
 It also provides a very basic skeleton of a TYPO3 extension, which automatically gets 
 installed in all TYPO3 versions.
 
-Currently, the following versions are supported:
+Currently, the following TYPO3 CMS versions are supported (using PHP 8.1):
 
 - TYPO3 11.5 LTS
 - TYPO3 12.4 LTS
