@@ -1,4 +1,3 @@
-version: "3.6"
 services:
     docs:
         image: ghcr.io/t3docs/render-documentation:latest
