@@ -22,6 +22,7 @@ vendor/bin/typo3 configuration:set 'SYS/displayErrors' 1
 vendor/bin/typo3 configuration:set 'SYS/trustedHostsPattern' '.*.*'
 vendor/bin/typo3 configuration:set 'MAIL/transport' 'smtp'
 vendor/bin/typo3 configuration:set 'MAIL/transport_smtp_server' 'localhost:1025'
+vendor/bin/typo3 configuration:set 'MAIL/defaultMailFromAddress' 'admin@example.com'
 vendor/bin/typo3 configuration:set 'GFX/processor' 'ImageMagick'
 vendor/bin/typo3 configuration:set 'GFX/processor_path' '/usr/bin/'
 
