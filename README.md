@@ -10,7 +10,7 @@ Currently, the following TYPO3 CMS versions are supported (using PHP 8.2):
 
 - TYPO3 11.5 LTS
 - TYPO3 12.4 LTS
-- TYPO3 13.x
+- TYPO3 13.4 LTS
 
 If you are looking for older TYPO3 CMS versions, you can check out and use those tags:
 
