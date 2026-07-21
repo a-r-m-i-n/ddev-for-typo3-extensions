@@ -1,4 +1,5 @@
 #!/bin/bash
+#ddev-silent-no-warn
 
 VERSION=v14
 
@@ -25,8 +26,7 @@ composer req typo3/minimal:'^14.3' \
          typo3/cms-setup:'^14.3' \
          typo3/cms-tstemplate:'^14.3' \
          typo3/theme-camino:'^14.3' \
-         helhum/typo3-console:'^8.3' \
-         friendsoftypo3/visual-editor:'^1.4' \
+         friendsoftypo3/visual-editor:'^1.9' \
          $PACKAGE_NAME:'*@dev' \
          --no-progress -n -d /var/www/html/$VERSION
 
@@ -35,17 +35,17 @@ cd /var/www/html/$VERSION
 mysql -h db -u root -p"root" -e "CREATE DATABASE ${VERSION};"
 
 vendor/bin/typo3 setup -n --dbname=$VERSION --password=$TYPO3_DB_PASSWORD \
-                 --distribution="theme_camino" \
                  --admin-user-password=$TYPO3_SETUP_ADMIN_PASSWORD
 
-vendor/bin/typo3 configuration:set 'BE/debug' 1
-vendor/bin/typo3 configuration:set 'FE/debug' 1
+vendor/bin/typo3 configuration:set 'BE/debug' true --json
+vendor/bin/typo3 configuration:set 'FE/debug' true --json
+vendor/bin/typo3 configuration:set 'SYS/displayErrors' true --json
 vendor/bin/typo3 configuration:set 'SYS/devIPmask' '*'
-vendor/bin/typo3 configuration:set 'SYS/displayErrors' 1
 vendor/bin/typo3 configuration:set 'SYS/trustedHostsPattern' '.*.*'
+vendor/bin/typo3 configuration:set 'SYS/systemLocale' 'en_US.utf8'
 vendor/bin/typo3 configuration:set 'MAIL/transport' 'smtp'
 vendor/bin/typo3 configuration:set 'MAIL/transport_smtp_server' 'localhost:1025'
-vendor/bin/typo3 configuration:set 'MAIL/defaultMailFromAddress' 'admin@example.com'
+vendor/bin/typo3 configuration:set 'MAIL/defaultMailFromAddress' $TYPO3_SETUP_ADMIN_EMAIL
 vendor/bin/typo3 configuration:set 'GFX/processor' 'ImageMagick'
 vendor/bin/typo3 configuration:set 'GFX/processor_path' '/usr/bin/'
 

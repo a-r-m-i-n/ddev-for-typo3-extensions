@@ -1,3 +1,4 @@
+#ddev-silent-no-warn
 services:
     docs:
         image: ghcr.io/t3docs/render-documentation:latest

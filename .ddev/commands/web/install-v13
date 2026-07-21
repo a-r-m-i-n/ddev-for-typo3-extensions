@@ -1,4 +1,5 @@
 #!/bin/bash
+#ddev-silent-no-warn
 
 VERSION=v13
 
@@ -10,22 +11,42 @@ composer config repositories.$EXTENSION_KEY path ../../$EXTENSION_KEY -d /var/ww
 composer config audit.block-insecure false -d /var/www/html/$VERSION
 composer config --no-plugins allow-plugins.typo3/cms-composer-installers true -d /var/www/html/$VERSION
 composer config --no-plugins allow-plugins.typo3/class-alias-loader true -d /var/www/html/$VERSION
-composer req t3/cms:'^13' $PACKAGE_NAME:'*@dev' --no-progress -n -d /var/www/html/$VERSION
+composer req typo3/minimal:'^13.4' \
+         typo3/cms-adminpanel:'^13.4' \
+         typo3/cms-belog:'^13.4' \
+         typo3/cms-beuser:'^13.4' \
+         typo3/cms-cli:'^3.1' \
+         typo3/cms-dashboard:'^13.4' \
+         typo3/cms-fluid-styled-content:'^13.4' \
+         typo3/cms-impexp:'^13.4' \
+         typo3/cms-info:'^13.4' \
+         typo3/cms-install:'^13.4' \
+         typo3/cms-lowlevel:'^13.4' \
+         typo3/cms-rte-ckeditor:'^13.4' \
+         typo3/cms-setup:'^13.4' \
+         typo3/cms-tstemplate:'^13.4' \
+         helhum/typo3-console:'^9.0' \
+         friendsoftypo3/visual-editor:'^1.9' \
+         $PACKAGE_NAME:'*@dev' \
+         --no-progress -n -d /var/www/html/$VERSION
 
 cd /var/www/html/$VERSION
 
 mysql -h db -u root -p"root" -e "CREATE DATABASE ${VERSION};"
 
-vendor/bin/typo3 setup -n --dbname=$VERSION --password=$TYPO3_DB_PASSWORD --create-site="https://${VERSION}.my-ext.ddev.site" --admin-user-password=$TYPO3_SETUP_ADMIN_PASSWORD
+vendor/bin/typo3 setup -n --dbname=$VERSION --password=$TYPO3_DB_PASSWORD \
+                 --create-site="https://${VERSION}.my-ext.ddev.site" \
+                 --admin-user-password=$TYPO3_SETUP_ADMIN_PASSWORD
 
-vendor/bin/typo3 configuration:set 'BE/debug' 1
-vendor/bin/typo3 configuration:set 'FE/debug' 1
+vendor/bin/typo3 configuration:set 'BE/debug' true --json
+vendor/bin/typo3 configuration:set 'FE/debug' true --json
+vendor/bin/typo3 configuration:set 'SYS/displayErrors' true --json
 vendor/bin/typo3 configuration:set 'SYS/devIPmask' '*'
-vendor/bin/typo3 configuration:set 'SYS/displayErrors' 1
 vendor/bin/typo3 configuration:set 'SYS/trustedHostsPattern' '.*.*'
+vendor/bin/typo3 configuration:set 'SYS/systemLocale' 'en_US.utf8'
 vendor/bin/typo3 configuration:set 'MAIL/transport' 'smtp'
 vendor/bin/typo3 configuration:set 'MAIL/transport_smtp_server' 'localhost:1025'
-vendor/bin/typo3 configuration:set 'MAIL/defaultMailFromAddress' 'admin@example.com'
+vendor/bin/typo3 configuration:set 'MAIL/defaultMailFromAddress' $TYPO3_SETUP_ADMIN_EMAIL
 vendor/bin/typo3 configuration:set 'GFX/processor' 'ImageMagick'
 vendor/bin/typo3 configuration:set 'GFX/processor_path' '/usr/bin/'
 

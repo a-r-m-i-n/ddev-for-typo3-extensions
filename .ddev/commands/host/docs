@@ -1,3 +1,4 @@
 #!/bin/bash
+#ddev-silent-no-warn
 
 docker compose -p "${DDEV_SITENAME}-docs" -f .ddev/docker-compose.docs.yaml run --rm docs

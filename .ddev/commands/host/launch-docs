@@ -1,4 +1,5 @@
 #!/bin/bash
+#ddev-silent-no-warn
 
 FULLURL="https://docs.${DDEV_SITENAME}.ddev.site"
 
