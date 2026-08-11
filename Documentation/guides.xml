@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<guides
+    xmlns="https://www.phpdoc.org/guides"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://www.phpdoc.org/guides ../vendor/phpdocumentor/guides-cli/resources/schema/guides.xsd"
+    links-are-relative="true"
+    default-code-language="php"
+>
+    <extension
+        class="\T3Docs\Typo3DocsTheme\DependencyInjection\Typo3DocsThemeExtension"
+        project-home="https://github.com/a-r-m-i-n/ddev-for-typo3-extensions"
+        project-repository="https://github.com/a-r-m-i-n/ddev-for-typo3-extensions"
+        project-issues="https://github.com/a-r-m-i-n/ddev-for-typo3-extensions/issues"
+        edit-on-github="a-r-m-i-n/ddev-for-typo3-extensions"
+        edit-on-github-branch="master"
+        typo3-core-preferred="stable"
+        interlink-shortcode="vendor/my-ext"
+    />
+    <project
+        title="Example Extension (for DDEV for TYPO3 extensions)"
+        release="latest"
+        copyright="2020-2026 by Armin Vieweg"
+    />
+</guides>

@@ -7,7 +7,7 @@ It includes:
 - a reusable `.ddev` configuration for extension development
 - a minimal TYPO3 extension skeleton
 - ready-to-run installation commands for multiple TYPO3 versions
-- local documentation rendering via the TYPO3 documentation container
+- local PHP-based documentation rendering via the TYPO3 documentation container
 
 The extension included in this repository is only a placeholder. Rename and adapt it to your project before using the setup for your development work.
 
@@ -41,8 +41,9 @@ Afterwards, the environment can generally be used offline.
    - Replace `my_ext` with your TYPO3 extension key
    - Replace `my-ext` with your DDEV site name
 3. Update the package name `vendor/my-ext` in:
-   - `composer.json`
-   - `.ddev/docker-compose.web.yaml` in the `PACKAGE_NAME` environment variable
+    - `composer.json`
+    - `.ddev/docker-compose.web.yaml` in the `PACKAGE_NAME` environment variable
+    - `Documentation/guides.xml` in the `interlink-shortcode` attribute
 4. Adjust the PSR-4 autoload configuration in `composer.json` and `ext_emconf.php` to match your vendor and extension namespace.
 
 Renaming the placeholders usually changes the following files:

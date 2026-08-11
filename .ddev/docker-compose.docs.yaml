@@ -1,9 +1,9 @@
 #ddev-silent-no-warn
 services:
     docs:
-        image: ghcr.io/t3docs/render-documentation:latest
+        image: ghcr.io/typo3-documentation/render-guides:latest
+        pull_policy: always
         profiles: ["manual"]
-        command: makehtml
+        command: --config=Documentation
         volumes:
-            - ../:/PROJECT:ro
-            - ../Documentation-GENERATED-temp:/RESULT
+            - ../:/project
